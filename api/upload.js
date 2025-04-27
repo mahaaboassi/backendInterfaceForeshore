@@ -5,7 +5,7 @@ export default function handler(req, res) {
   const { filePath } = req.query;
 
   // Construct the full path to the file
-  const fullPath = path.join(process.cwd(), 'uploads', filePath);
+  const fullPath = path.join(process.cwd(), 'uploads/property', filePath);
 
   // Check if the file exists
   if (fs.existsSync(fullPath)) {
