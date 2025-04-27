@@ -24,6 +24,12 @@ app.use(cors({
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 }));
+// Serve static files from 'public' folder
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Example: Serve 'uploads' route if needed (optional extra)
+app.use('/uploads', express.static(path.join(__dirname, 'public/uploads')));
+
 app.use(bodyParser.urlencoded({
     extended: true
   }));
